@@ -4,6 +4,7 @@ const app = express()
 const Router = express.Router()
 
 Router.get("/teste", (req, res) => {
+    console.log("ROTA TESTE FUNCIONANDO!")
     res.status(200).json({message: "ROUTER FUNCIONANDO"})
 })
 

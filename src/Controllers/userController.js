@@ -9,13 +9,13 @@ class userController {
             return res.status(200).json({message: "Novo usuário criado com Sucesso!"})
         } catch (error) {
             console.log(`Falha ao criar um novo usuário: ${error}`)
-            return res.status(404).json({message: `Falha ao criar um novo Usuário!`})
+            return res.status(500).json({message: `Falha ao criar um novo Usuário!`})
         }
     }
 
     async listarUsers(req, res) {
         try {
-            const listaUsuarios = await userModel.find()
+            const listaUsuarios = await userModel.find().lean()
             console.log("Lista de usuários encontrada com Sucesso!")
             return res.status(200).json(listaUsuarios)
         } catch (error) {

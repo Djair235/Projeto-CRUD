@@ -1,7 +1,5 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
-const ObjectId = Schema.ObjectId
-
 
 const novoUsuario = new Schema({
     nome: {type: String, required: true},
